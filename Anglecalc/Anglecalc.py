@@ -28,11 +28,11 @@ from AnglecalcDialog import AnglecalcDialog
 class Anglecalc: 
 
   def __init__(self, iface):
-    # Save reference to the QGIS interface
+    # Save reference to the QGIS interface MANDATORY
     self.iface = iface
 
   def initGui(self):  
-    # Create action that will start plugin configuration
+    # Create action that will start plugin configuration MANDATORY
     self.action = QAction(QIcon(":/plugins/Anglecalc/icon.png"), \
         "Menu Item", self.iface.mainWindow())
     # connect the action to the run method
@@ -43,7 +43,7 @@ class Anglecalc:
     self.iface.addPluginToMenu("&Menu Item", self.action)
 
   def unload(self):
-    # Remove the plugin menu item and icon
+    # Remove the plugin menu item and icon MANDATORY
     self.iface.removePluginMenu("&Menu Item",self.action)
     self.iface.removeToolBarIcon(self.action)
 
