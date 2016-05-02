@@ -33,29 +33,37 @@ class Anglecalc:
 
   def initGui(self):  
     # Create action that will start plugin configuration MANDATORY
-    self.action = QAction(QIcon(":/plugins/Anglecalc/icon.png"), \
+    self.action = QAction(QIcon(":/plugins/Anglecalc/icon.png"), "Angle Calculator"\
         "Menu Item", self.iface.mainWindow())
+     self.iface.mainWindow ()
+   self.action.setWhatsThis("Configuration for Anglecalc plugin")
     # connect the action to the run method
     QObject.connect(self.action, SIGNAL("activated()"), self.run) 
 
     # Add toolbar button and menu item
     self.iface.addToolBarIcon(self.action)
     self.iface.addPluginToMenu("&Menu Item", self.action)
+  
+    # signal when canvas is rendered
+    QObject.connect(self.iface.mapCanvas(), SIGNAL("renderComplete(QPainter*)"), \
 
   def unload(self):
     # Remove the plugin menu item and icon MANDATORY
     self.iface.removePluginMenu("&Menu Item",self.action)
     self.iface.removeToolBarIcon(self.action)
+# Qgs.Application.exitQgis() ???
 
   # run method that performs all the real work
   def run(self): 
     # create and show the dialog 
+    
+    QgsGeometryAnalyzer::
     dlg = AnglecalcDialog() 
     # show the dialog
     dlg.show()
     result = dlg.exec_() 
     # See if OK was pressed
     if result == 1: 
-      # do something useful (delete the line containing pass and
+     print "run called!" # do something useful (delete the line containing pass and
       # substitute with your code
       pass 
