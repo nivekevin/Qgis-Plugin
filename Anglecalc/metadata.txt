@@ -1,0 +1,15 @@
+[general]
+name=Anglecalc
+description = Anglecalc is a QGIS plugin to calculate relative angle of road intersections.
+about=The QGIS plugin creates points at intersections, groups the lines associated with the point and returns relative angle distribution as a function of the number of lines at the intersection.
+version=0.0.1
+qgisMinimumVersion=2.0.1
+
+experimental=True
+icon=icon.tobedefined
+tags=angle, orientation, intersection
+homepage=https://github.com/nivekevin/Qgis-Plugin/new/master/Anglecalc
+tracker=https://github.com/nivekevin/Qgis-Plugin/issues
+repository=https://github.com/nivekevin/Qgis-Plugin/new/master/Anglecalc
+author=Kevin Hartwell
+email=kevin.huthart@gmail.com
