@@ -30,25 +30,30 @@ class Anglecalc:
   def __init__(self, iface):
     # Save reference to the QGIS interface MANDATORY
     self.iface = iface
+    self.plugin_dir=os.path.dirname(__file__)
+    #initialize locale
+    locale = Qsettings().value("locale/userLocale")[0:2]
 
   def initGui(self):  
     # Create action that will start plugin configuration MANDATORY
-    self.action = QAction(QIcon(":/plugins/Anglecalc/icon.png"), \
-        "Menu Item", self.iface.mainWindow())
-    # connect the action to the run method
+    self.action = QAction(QIcon(":/plugins/Anglecalc/icon.png"), "Calculate angles", self.iface.mainWindow())
+      # connect the action to the run method
     QObject.connect(self.action, SIGNAL("activated()"), self.run) 
 
     # Add toolbar button and menu item
     self.iface.addToolBarIcon(self.action)
-    self.iface.addPluginToMenu("&Menu Item", self.action)
+    self.iface.addPluginToMenu("Anglecalc", self.action)
 
   def unload(self):
     # Remove the plugin menu item and icon MANDATORY
-    self.iface.removePluginMenu("&Menu Item",self.action)
+    self.iface.removePluginMenu("Anglecalc",self.action)
     self.iface.removeToolBarIcon(self.action)
 
   # run method that performs all the real work
   def run(self): 
+    
+    
+    
     # create and show the dialog 
     dlg = AnglecalcDialog() 
     # show the dialog
@@ -56,6 +61,4 @@ class Anglecalc:
     result = dlg.exec_() 
     # See if OK was pressed
     if result == 1: 
-      # do something useful (delete the line containing pass and
-      # substitute with your code
-      pass 
+       
