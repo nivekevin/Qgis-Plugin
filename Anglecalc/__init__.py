@@ -24,7 +24,7 @@ def description():
 def version(): 
   return "Version 0.1" 
 def qgisMinimumVersion():
-  return "1.0"
+  return "2.0"
 def classFactory(iface): 
   # load Anglecalc class from file Anglecalc
   from Anglecalc import Anglecalc 
