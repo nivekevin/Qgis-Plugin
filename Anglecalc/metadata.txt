@@ -1,8 +1,17 @@
 [general]
 name=Anglecalc
-description = Anglecalc is a QGIS plugin to calculate relative angle of road intersections.
-about=The QGIS plugin creates points at intersections, groups the lines associated with the point and returns relative angle distribution as a function of the number of lines at the intersection.
-version=0.0.1
+description =This QGis Python plugin extracts intersections and creates classes according to
+	the number of intersected lines and their angularity
+about= After extracting the intersections, 
+	the corresponding line segments are divided up (every 10 meters by default) and 
+		the average angularity as well as standard deviation is calculated.
+	The classification according to averages has been manually set
+		to correspond to common street intersections, from 3 to 5-way intersections.
+	The classification according to standard deviation is binary :
+		if SD<1, the angle is considered straight, otherwise it is considered curvy.
+	The standard deviation classification is made according to
+		the number of curvy /straight lines an intersection is composed of.
+version=0.1.0
 qgisMinimumVersion=2.0.1
 
 experimental=True
@@ -11,5 +20,5 @@ tags=angle, orientation, intersection
 homepage=https://github.com/nivekevin/Qgis-Plugin/new/master/Anglecalc
 tracker=https://github.com/nivekevin/Qgis-Plugin/issues
 repository=https://github.com/nivekevin/Qgis-Plugin/new/master/Anglecalc
-author=Kevin Hartwell
+author=T. Leduc, K. Hartwell
 email=kevin.huthart@gmail.com
