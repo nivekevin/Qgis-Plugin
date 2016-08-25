@@ -20,7 +20,7 @@ email                : kevin.huthart@gmail.com
 def name(): 
   return "Angle Calculator" 
 def description():
-  return "returns relative angle of intersected multistrings"
+  return "returns angularity of intersected multistrings"
 def version(): 
   return "Version 0.1" 
 def qgisMinimumVersion():
